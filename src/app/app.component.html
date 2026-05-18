@@ -1,0 +1,189 @@
+<nav [class.scrolled]="navScrolled">
+  <div class="nav-logo">FM<span>.</span></div>
+  <div class="nav-links">
+    <a (click)="scrollTo('about')">About</a>
+    <a (click)="scrollTo('skills')">Skills</a>
+    <a (click)="scrollTo('experience')">Experience</a>
+    <a (click)="scrollTo('projects')">Projects</a>
+    <a (click)="scrollTo('contact')">Contact</a>
+  </div>
+  <a href="mailto:frankmogashoa3@gmail.com" class="nav-cta">Hire Me</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-tag">Available for opportunities — Gauteng, SA</div>
+  <h1>Frank<br /><span class="gold">Mogashoa</span></h1>
+  <div class="hero-subtitle">Full-Stack Software<br/>Developer</div>
+  <p class="hero-desc">
+    Building scalable enterprise applications across Java, Angular, React and Node.js.
+    2+ years shipping production systems in both the public and private sector.
+  </p>
+  <div class="hero-actions">
+    <button class="btn-primary" (click)="scrollTo('projects')">View My Work</button>
+    <button class="btn-ghost" (click)="scrollTo('contact')">Get In Touch</button>
+  </div>
+  <div class="hero-stats">
+    <div class="stat-item">
+      <div class="stat-num">2<span>+</span></div>
+      <div class="stat-label">Years Experience</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">4<span>+</span></div>
+      <div class="stat-label">Live Projects</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">8<span>+</span></div>
+      <div class="stat-label">Technologies</div>
+    </div>
+  </div>
+  <div class="scroll-hint">Scroll to explore</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section-surface">
+  <div class="section-label">01 — About</div>
+  <h2>Who I Am</h2>
+  <div class="section-line"></div>
+  <div class="about-grid reveal">
+    <div class="about-text">
+      <p>I'm a <strong>Junior Full-Stack Software Developer</strong> with over two years of hands-on experience delivering enterprise web applications in both government and private sector environments.</p>
+      <p>My primary stack is <strong>Java (Spring Boot)</strong> on the backend and <strong>Angular</strong> on the frontend, but I've also worked with React.js and Node.js and I adapt quickly to whatever a project demands.</p>
+      <p>I care deeply about <strong>clean, maintainable code</strong>, sensible architecture, and building systems that actually hold up under real-world pressure. I thrive in Agile teams and enjoy the full cycle — from requirements through deployment and support.</p>
+    </div>
+    <div class="about-info">
+      <div class="info-row">
+        <span class="info-label">Location</span>
+        <span class="info-val">Gauteng, South Africa</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Education</span>
+        <span class="info-val">National Diploma — IT: Software Development<br />Tshwane University of Technology, 2024</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Current Role</span>
+        <span class="info-val">Junior Full-Stack Developer at Droppa</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Email</span>
+        <span class="info-val">frankmogashoa3&#64;gmail.com</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">LinkedIn</span>
+        <span class="info-val">linkedin.com/in/frank-mogashoa-18026a28a</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-label">02 — Skills</div>
+  <h2>Technical Stack</h2>
+  <div class="section-line"></div>
+  <div class="skills-grid">
+    <div class="skill-card reveal" *ngFor="let card of skills">
+      <div class="skill-card-icon">{{ card.icon }}</div>
+      <div class="skill-card-title">{{ card.title }}</div>
+      <div class="skill-tags">
+        <span
+          *ngFor="let tag of card.tags"
+          class="tag"
+          [class.highlight]="tag.highlight">
+          {{ tag.label }}
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="section-surface">
+  <div class="section-label">03 — Experience</div>
+  <h2>Work History</h2>
+  <div class="section-line"></div>
+  <div class="exp-list">
+    <div class="exp-item reveal" *ngFor="let exp of experiences">
+      <div class="exp-dates">
+        {{ exp.dates }}
+        <div class="current" *ngIf="exp.current">Current</div>
+      </div>
+      <div>
+        <div class="exp-role">{{ exp.role }}</div>
+        <div class="exp-company">{{ exp.company }}</div>
+        <ul class="exp-bullets">
+          <li *ngFor="let bullet of exp.bullets">{{ bullet }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-label">04 — Projects</div>
+  <h2>What I've Built</h2>
+  <div class="section-line"></div>
+  <div class="projects-grid">
+    <div
+      class="proj-card reveal"
+      [class.featured]="proj.featured"
+      *ngFor="let proj of projects">
+      <div class="proj-header">
+        <span class="proj-badge" *ngIf="proj.featured">Featured</span>
+      </div>
+      <div class="proj-title">{{ proj.title }}</div>
+      <div class="proj-role">{{ proj.role }} — {{ proj.date }}</div>
+      <p class="proj-desc">{{ proj.description }}</p>
+      <div class="proj-tech">
+        <span
+          class="tag"
+          [class.highlight]="i === 0 || i === 1"
+          *ngFor="let t of proj.tech; let i = index">
+          {{ t }}
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section-surface">
+  <div class="section-label">05 — Contact</div>
+  <h2>Let's Talk</h2>
+  <div class="section-line"></div>
+  <div class="contact-inner reveal">
+    <p class="contact-intro">
+      I'm actively looking for junior to intermediate full-stack opportunities in Gauteng (hybrid or remote welcome).
+      If you think I'd be a fit for your team, I'd love to hear from you.
+    </p>
+    <div class="contact-links">
+      <a href="mailto:frankmogashoa3@gmail.com" class="contact-link">
+        <div class="contact-link-icon">✉</div>
+        <div>
+          <div class="contact-link-label">Email</div>
+          <div class="contact-link-val">frankmogashoa3&#64;gmail.com</div>
+        </div>
+      </a>
+      <a href="tel:+27828447046" class="contact-link">
+        <div class="contact-link-icon">📞</div>
+        <div>
+          <div class="contact-link-label">Phone</div>
+          <div class="contact-link-val">+27 82 844 7046</div>
+        </div>
+      </a>
+      <a href="https://linkedin.com/in/frank-mogashoa-18026a28a" target="_blank" class="contact-link">
+        <div class="contact-link-icon">in</div>
+        <div>
+          <div class="contact-link-label">LinkedIn</div>
+          <div class="contact-link-val">linkedin.com/in/frank-mogashoa-18026a28a</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Built with <span>Angular</span> by <span>Frank Mogashoa</span> — 2026
+</footer>
