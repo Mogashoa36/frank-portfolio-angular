@@ -157,7 +157,7 @@ export class AppComponent implements AfterViewInit {
            featured: false,
            description: 'Courier management application for delivery drivers with route optimisation, navigation, and proof-of-delivery capture via signature and image upload.',
            tech: ['Core Java', 'MongoDB', 'REST APIs', 'Google Maps API']
-         }
+         },
     {
       title: 'Audit Tracking System', role: 'Lead Developer', date: '2026',
       featured: false,
@@ -169,6 +169,12 @@ export class AppComponent implements AfterViewInit {
       featured: false,
       description: 'Enterprise procurement lifecycle management system tracking requests from initiation through approval to award, with routing logic, status tracking, and centralised reporting dashboards.',
       tech: ['Spring Boot', 'Angular', 'PostgreSQL', 'Hibernate', 'REST APIs']
+    },
+    {
+      title: 'Skynet Delivery App', role: 'Backend Developer', date: '2026',
+      featured: false,
+      description: 'Courier management application for delivery drivers with route optimisation, navigation, and proof-of-delivery capture via signature and image upload.',
+      tech: ['Core Java', 'MongoDB', 'REST APIs', 'Google Maps API']
     }
   ];
 }
