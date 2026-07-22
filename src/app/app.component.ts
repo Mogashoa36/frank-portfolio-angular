@@ -135,7 +135,7 @@ export class AppComponent implements AfterViewInit {
       ]
     },
     {
-      dates: 'Feb 2024 — Apr 2024', current: false,
+      dates: 'Feb 2023 — Apr 2024', current: false,
       role: 'Intern Software Developer', company: 'Informatics Community Engagement Project (ICEP)',
       bullets: [
         'Built dynamic web applications using React.js and Node.js/Express.',
