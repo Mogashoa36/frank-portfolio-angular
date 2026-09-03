@@ -15,10 +15,9 @@
   <div class="hero-grid-bg"></div>
   <div class="hero-tag">Available for opportunities — Gauteng, SA</div>
   <h1>Frank<br /><span class="gold">Mogashoa</span></h1>
-  <div class="hero-subtitle">Full-Stack Software<br/>Developer</div>
+  <div class="hero-subtitle">Full-Stack <br/>Developer</div>
   <p class="hero-desc">
-    Building scalable enterprise applications across Java, Angular, React and Node.js.
-    3 years shipping production systems in both the public and private sector.
+    Building scalable enterprise applications across Java (Spring Boot) and Angular, 3 years shipping production systems in both the public and private sectors.
   </p>
   <div class="hero-actions">
     <button class="btn-primary" (click)="scrollTo('projects')">View My Work</button>
@@ -26,15 +25,15 @@
   </div>
   <div class="hero-stats">
     <div class="stat-item">
-      <div class="stat-num">2<span>+</span></div>
+      <div class="stat-num">3<span>+</span></div>
       <div class="stat-label">Years Experience</div>
     </div>
     <div class="stat-item">
-      <div class="stat-num">4<span>+</span></div>
+      <div class="stat-num">2<span>+</span></div>
       <div class="stat-label">Live Projects</div>
     </div>
     <div class="stat-item">
-      <div class="stat-num">8<span>+</span></div>
+      <div class="stat-num">10<span>+</span></div>
       <div class="stat-label">Technologies</div>
     </div>
   </div>
@@ -144,6 +143,14 @@
           {{ t }}
         </span>
       </div>
+      <a
+        *ngIf="proj.link"
+        [href]="proj.link"
+        target="_blank"
+        rel="noopener"
+        class="proj-link">
+        View Project →
+      </a>
     </div>
   </div>
 </section>
@@ -155,7 +162,7 @@
   <div class="section-line"></div>
   <div class="contact-inner reveal">
     <p class="contact-intro">
-      I'm actively looking for junior to intermediate full-stack opportunities in Gauteng (hybrid or remote welcome).
+      I'm actively looking for junior to intermediate full-stack opportunities in Gauteng.  
       If you think I'd be a fit for your team, I'd love to hear from you.
     </p>
     <div class="contact-links">
@@ -184,6 +191,4 @@
   </div>
 </section>
 
-<footer>
-  Built with <span>Angular</span> by <span>Frank Mogashoa</span> — 2026
-</footer>
+<footer>Angular 17</footer>
