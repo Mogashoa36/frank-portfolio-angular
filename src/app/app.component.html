@@ -1,44 +1,84 @@
-<nav [class.scrolled]="navScrolled">
-  <div class="nav-logo">FM<span>.</span></div>
-  <div class="nav-links">
-    <a (click)="scrollTo('about')">About</a>
-    <a (click)="scrollTo('skills')">Skills</a>
-    <a (click)="scrollTo('experience')">Experience</a>
-    <a (click)="scrollTo('projects')">Projects</a>
-    <a (click)="scrollTo('contact')">Contact</a>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<nav [class.scrolled]="navScrolled" [class.nav-open]="navOpen">
+  <a class="nav-logo" href="#hero" (click)="scrollTo('hero')" aria-label="Frank Mogashoa — back to top">
+    FM<span>.</span>
+  </a>
+  <div class="nav-links" id="primary-navigation" [class.open]="navOpen">
+    <a href="#about" (click)="scrollTo('about')">About</a>
+    <a href="#skills" (click)="scrollTo('skills')">Skills</a>
+    <a href="#experience" (click)="scrollTo('experience')">Experience</a>
+    <a href="#projects" (click)="scrollTo('projects')">Projects</a>
+    <a href="#contact" (click)="scrollTo('contact')">Contact</a>
   </div>
-  <a href="mailto:frankmogashoa3@gmail.com" class="nav-cta">Hire Me</a>
+  <div class="nav-actions">
+    <a [href]="'mailto:' + email" class="nav-cta">Hire Me</a>
+    <button
+      type="button"
+      class="nav-toggle"
+      (click)="toggleNav()"
+      [attr.aria-expanded]="navOpen"
+      aria-controls="primary-navigation"
+      aria-label="Toggle navigation menu">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
+  </div>
 </nav>
 
+<main id="main">
 <!-- HERO -->
 <section id="hero">
   <div class="hero-grid-bg"></div>
-  <div class="hero-tag">Available for opportunities — Gauteng, SA</div>
-  <h1>Frank<br /><span class="gold">Mogashoa</span></h1>
-  <div class="hero-subtitle">Full-Stack Software<br/>Developer</div>
-  <p class="hero-desc">
-    Building scalable enterprise applications across Java, Angular, React and Node.js.
-    3 years shipping production systems in both the public and private sector.
-  </p>
-  <div class="hero-actions">
-    <button class="btn-primary" (click)="scrollTo('projects')">View My Work</button>
-    <button class="btn-ghost" (click)="scrollTo('contact')">Get In Touch</button>
-  </div>
-  <div class="hero-stats">
-    <div class="stat-item">
-      <div class="stat-num">3<span>+</span></div>
-      <div class="stat-label">Years Experience</div>
+  <div class="hero-inner">
+    <div class="hero-content">
+        <div class="hero-tag">Available for opportunities — Gauteng, SA</div>
+        <h1>Frank<br /><span class="gold">Mogashoa</span></h1>
+        <div class="hero-subtitle">
+          Full-Stack Software Developer<br />
+          <span class="hero-stack">Java, Spring Boot &amp; Angular</span>
+        </div>
+        <p class="hero-desc">
+          I build secure, scalable web applications that solve business problems, streamline
+          operations, and deliver reliable digital experiences.
+        </p>
+        <div class="hero-actions">
+          <button type="button" class="btn-primary" (click)="scrollTo('projects')">View My Work</button>
+          <button type="button" class="btn-ghost" (click)="scrollTo('contact')">Get In Touch</button>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-num">3<span>+</span></div>
+            <div class="stat-label">Years Experience</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">6<span>+</span></div>
+            <div class="stat-label">Projects</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">9<span>+</span></div>
+            <div class="stat-label">Regions Served</div>
+          </div>
+        </div>
+      </div>
+
+      <figure class="hero-photo">
+        <div class="hero-photo-frame">
+          <img
+            src="assets/frank-mogashoa.jpg"
+            alt="Frank Mogashoa, Full-Stack Software Developer, wearing graduation robes and holding his cap outdoors."
+            width="1000"
+            height="1250"
+            decoding="async" />
+        </div>
+        <figcaption class="hero-photo-caption">
+          <span class="hero-photo-name">Frank Mogashoa</span>
+          <span class="hero-photo-role">Full-Stack Software Developer</span>
+        </figcaption>
+      </figure>
     </div>
-    <div class="stat-item">
-      <div class="stat-num">3<span>+</span></div>
-      <div class="stat-label">Live Projects</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num">8<span>+</span></div>
-      <div class="stat-label">Technologies</div>
-    </div>
-  </div>
-  <div class="scroll-hint">Scroll to explore</div>
+    <div class="scroll-hint">Scroll to explore</div>
 </section>
 
 <!-- ABOUT -->
@@ -48,30 +88,52 @@
   <div class="section-line"></div>
   <div class="about-grid reveal">
     <div class="about-text">
-      <p>I'm a <strong>Junior Full-Stack Software Developer</strong> with over three years of hands-on experience delivering enterprise web applications in both government and private sector environments.</p>
-      <p>My primary stack is <strong>Java (Spring Boot)</strong> on the backend and <strong>Angular</strong> on the frontend, but I've also worked with React.js and Node.js and I adapt quickly to whatever a project demands.</p>
-      <p>I care deeply about <strong>clean, maintainable code</strong>, sensible architecture, and building systems that actually hold up under real-world pressure. I thrive in Agile teams and enjoy the full cycle — from requirements through deployment and support.</p>
+      <p>
+        I'm a <strong>Full-Stack Software Developer</strong> with around three years of professional
+        experience building and maintaining enterprise applications across both the public and
+        private sector.
+      </p>
+      <p>
+        My primary stack is <strong>Java with Spring Boot</strong> on the backend and
+        <strong>Angular with TypeScript</strong> on the frontend. I've developed REST APIs and
+        the interfaces that consume them, integrated relational and NoSQL databases through Spring
+        Data JPA and Hibernate, and implemented authentication with Spring Security, JWT and
+        directory integration through LDAP and Active Directory.
+      </p>
+      <p>
+        I work end-to-end: gathering requirements with product owners and business analysts,
+        delivering functionality in an Agile team, supporting deployment and CI/CD pipelines, and
+        helping troubleshoot and support production systems once they are live.
+      </p>
+      <p>
+        I care about <strong>clean, maintainable code</strong>, sensible architecture, performance
+        and security — and I keep learning, because the technology landscape does not stand still.
+      </p>
     </div>
     <div class="about-info">
       <div class="info-row">
         <span class="info-label">Location</span>
-        <span class="info-val">Gauteng, South Africa</span>
+        <span class="info-val">{{ location }}</span>
       </div>
       <div class="info-row">
         <span class="info-label">Education</span>
-        <span class="info-val">National Diploma — IT: Software Development<br />Tshwane University of Technology, 2024</span>
+        <span class="info-val">{{ education }}</span>
       </div>
       <div class="info-row">
-        <span class="info-label">Current Role</span>
-        <span class="info-val">Junior Full-Stack Developer at Droppa</span>
+        <span class="info-label">Focus</span>
+        <span class="info-val">Full-Stack Development — Java, Spring Boot, Angular</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Domain Experience</span>
+        <span class="info-val">Government enterprise systems, logistics platforms, procurement and audit workflows</span>
       </div>
       <div class="info-row">
         <span class="info-label">Email</span>
-        <span class="info-val">frankmogashoa3&#64;gmail.com</span>
+        <span class="info-val">{{ email }}</span>
       </div>
       <div class="info-row">
         <span class="info-label">LinkedIn</span>
-        <span class="info-val">linkedin.com/in/frank-mogashoa-18026a28a</span>
+        <span class="info-val">{{ linkedinLabel }}</span>
       </div>
     </div>
   </div>
@@ -112,9 +174,13 @@
       <div>
         <div class="exp-role">{{ exp.role }}</div>
         <div class="exp-company">{{ exp.company }}</div>
+        <div class="exp-context" *ngIf="exp.context">{{ exp.context }}</div>
         <ul class="exp-bullets">
           <li *ngFor="let bullet of exp.bullets">{{ bullet }}</li>
         </ul>
+        <div class="exp-stack" *ngIf="exp.stack?.length">
+          <span class="tag" *ngFor="let s of exp.stack">{{ s }}</span>
+        </div>
       </div>
     </div>
   </div>
@@ -126,25 +192,102 @@
   <h2>What I've Built</h2>
   <div class="section-line"></div>
   <div class="projects-grid">
-    <div
+    <article
       class="proj-card reveal"
       [class.featured]="proj.featured"
-      *ngFor="let proj of projects">
+      [class.expanded]="expandedProject === i"
+      *ngFor="let proj of projects; let i = index">
       <div class="proj-header">
         <span class="proj-badge" *ngIf="proj.featured">Featured</span>
+        <span class="proj-badge proj-badge-muted" *ngIf="proj.confidential">Sanitised details</span>
       </div>
-      <div class="proj-title">{{ proj.title }}</div>
+      <h3 class="proj-title">{{ proj.title }}</h3>
+      <div class="proj-client" *ngIf="proj.client">{{ proj.client }}</div>
       <div class="proj-role">{{ proj.role }} — {{ proj.date }}</div>
       <p class="proj-desc">{{ proj.description }}</p>
       <div class="proj-tech">
         <span
           class="tag"
-          [class.highlight]="i === 0 || i === 1"
-          *ngFor="let t of proj.tech; let i = index">
+          [class.highlight]="techIndex === 0 || techIndex === 1"
+          *ngFor="let t of proj.tech; let techIndex = index">
           {{ t }}
         </span>
       </div>
-    </div>
+      <button
+        type="button"
+        class="proj-toggle"
+        *ngIf="hasDetail(proj)"
+        (click)="toggleProject(i)"
+        [attr.aria-expanded]="expandedProject === i">
+        <span>{{ expandedProject === i ? 'Hide details' : 'View details' }}</span>
+        <span class="proj-toggle-icon" aria-hidden="true">{{ expandedProject === i ? '−' : '+' }}</span>
+      </button>
+
+      <div class="proj-detail" *ngIf="expandedProject === i">
+        <div class="detail-block" *ngIf="proj.overview">
+          <h4 class="detail-heading">Overview</h4>
+          <p class="detail-text">{{ proj.overview }}</p>
+        </div>
+
+        <div class="detail-grid" *ngIf="proj.problem || proj.solution">
+          <div class="detail-block" *ngIf="proj.problem">
+            <h4 class="detail-heading">Problem</h4>
+            <p class="detail-text">{{ proj.problem }}</p>
+          </div>
+          <div class="detail-block" *ngIf="proj.solution">
+            <h4 class="detail-heading">Solution</h4>
+            <p class="detail-text">{{ proj.solution }}</p>
+          </div>
+        </div>
+
+        <div class="detail-block" *ngIf="proj.contribution?.length">
+          <h4 class="detail-heading">My contribution</h4>
+          <ul class="detail-list">
+            <li *ngFor="let c of proj.contribution">{{ c }}</li>
+          </ul>
+        </div>
+
+        <div class="detail-block" *ngIf="proj.features?.length">
+          <h4 class="detail-heading">Key functionality</h4>
+          <ul class="detail-list detail-list-grid">
+            <li *ngFor="let f of proj.features">{{ f }}</li>
+          </ul>
+        </div>
+
+        <div class="detail-block" *ngIf="proj.architecture?.length">
+          <h4 class="detail-heading">Architecture &amp; implementation</h4>
+          <ul class="detail-list">
+            <li *ngFor="let a of proj.architecture">{{ a }}</li>
+          </ul>
+        </div>
+
+        <div class="detail-block" *ngIf="proj.results?.length">
+          <h4 class="detail-heading">Verified results</h4>
+          <ul class="detail-list">
+            <li *ngFor="let r of proj.results">{{ r }}</li>
+          </ul>
+        </div>
+
+        <div class="detail-block" *ngIf="proj.links?.length">
+          <h4 class="detail-heading">Links</h4>
+          <div class="proj-links">
+            <a
+              class="proj-link"
+              *ngFor="let link of proj.links"
+              [href]="link.url"
+              target="_blank"
+              rel="noopener noreferrer">
+              {{ link.label }}
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+
+        <p class="detail-note" *ngIf="proj.confidential">
+          Employer project — descriptions are sanitised and no source code or live demo is published.
+        </p>
+      </div>
+    </article>
   </div>
 </section>
 
@@ -155,34 +298,43 @@
   <div class="section-line"></div>
   <div class="contact-inner reveal">
     <p class="contact-intro">
-      I'm actively looking for junior to intermediate full-stack opportunities in Gauteng (hybrid or remote welcome).
-      If you think I'd be a fit for your team, I'd love to hear from you.
+      I'm looking for full-stack opportunities where I can keep building enterprise applications
+      with Java, Spring Boot and Angular. Based in Gauteng, South Africa — hybrid or remote
+      arrangements welcome. If you think I'd be a fit for your team, I'd love to hear from you.
     </p>
     <div class="contact-links">
-      <a href="mailto:frankmogashoa3@gmail.com" class="contact-link">
-        <div class="contact-link-icon">✉</div>
+      <a [href]="'mailto:' + email" class="contact-link">
+        <div class="contact-link-icon" aria-hidden="true">✉</div>
         <div>
           <div class="contact-link-label">Email</div>
-          <div class="contact-link-val">frankmogashoa3&#64;gmail.com</div>
+          <div class="contact-link-val">{{ email }}</div>
         </div>
       </a>
-      <a href="tel:+27828447046" class="contact-link">
-        <div class="contact-link-icon">📞</div>
+      <a [href]="phoneHref" class="contact-link">
+        <div class="contact-link-icon" aria-hidden="true">📞</div>
         <div>
           <div class="contact-link-label">Phone</div>
-          <div class="contact-link-val">+27 82 844 7046</div>
+          <div class="contact-link-val">{{ phone }}</div>
         </div>
       </a>
-      <a href="https://linkedin.com/in/frank-mogashoa-18026a28a" target="_blank" class="contact-link">
-        <div class="contact-link-icon">in</div>
+      <a [href]="linkedinUrl" target="_blank" rel="noopener noreferrer" class="contact-link">
+        <div class="contact-link-icon" aria-hidden="true">in</div>
         <div>
           <div class="contact-link-label">LinkedIn</div>
-          <div class="contact-link-val">linkedin.com/in/frank-mogashoa-18026a28a</div>
+          <div class="contact-link-val">{{ linkedinLabel }}</div>
+        </div>
+      </a>
+      <a [href]="githubUrl" target="_blank" rel="noopener noreferrer" class="contact-link">
+        <div class="contact-link-icon" aria-hidden="true">⌨</div>
+        <div>
+          <div class="contact-link-label">GitHub</div>
+          <div class="contact-link-val">{{ githubLabel }}</div>
         </div>
       </a>
     </div>
   </div>
 </section>
+</main>
 
 <footer>
   Built with <span>Angular</span> by <span>Frank Mogashoa</span> — 2026
