@@ -1,0 +1,15 @@
+# Build output
+/dist
+
+# Local logs & verification artifacts
+*.log
+verify-out.json
+verify-prod.json
+vp-out.json
+bp-out.json
+dom.html
+shots/
+
+# OS / editor
+.DS_Store
+Thumbs.db
