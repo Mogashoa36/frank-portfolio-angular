@@ -31,6 +31,20 @@ export interface Project {
   featured?: boolean;
   description: string;
   tech: string[];
+  /** Optional client name for the project. */
+  client?: string;
+  /** Optional detail sections shown when a project card is expanded. */
+  overview?: string;
+  problem?: string;
+  solution?: string;
+  contribution?: string[];
+  features?: string[];
+  architecture?: string[];
+  results?: string[];
+  /** Optional external links for the project. */
+  links?: ProjectLink[];
+  /** Marks a project as employer work whose details are sanitised. */
+  confidential?: boolean;
 }
 
 @Component({
